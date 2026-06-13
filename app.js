@@ -1,7 +1,5 @@
-/* travelX (TRVLX) - Simplified Script Logic */
 document.addEventListener('DOMContentLoaded', () => {
 
-  // 1. Destination Card Toggling
   const destSelect = document.getElementById('destination-select');
   if (destSelect) {
     const showCard = (val) => {
@@ -10,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     destSelect.addEventListener('change', (e) => showCard(e.target.value));
 
-    // Handle URL parameters (e.g. details.html?goto=mirissa)
     const gotoParam = new URLSearchParams(window.location.search).get('goto');
     if (gotoParam) {
       destSelect.value = gotoParam;
@@ -18,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // 2. Trip Calculator
   const btnCalc = document.getElementById('btn-calculate');
   if (btnCalc) {
     btnCalc.addEventListener('click', () => {
@@ -30,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 3. Form Submission & Modal Dialog
   const form = document.getElementById('inquiry-form');
   const modal = document.getElementById('success-modal');
   if (form && modal) {
@@ -45,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 4. Hero Background Slideshow
   const hero = document.querySelector('.hero');
   if (hero) {
     const imgs = ['assets/sigiriya.png', 'assets/dalada.png', 'assets/mirissa.png'];
@@ -55,5 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
       hero.style.backgroundImage = `linear-gradient(rgba(15,16,21,0.75), rgba(15,16,21,0.95)), url('${imgs[idx]}')`;
     }, 5000);
   }
-
 });
