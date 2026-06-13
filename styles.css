@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Geist:wght@300;400;500;600&display=swap");
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,16 +7,14 @@
 body {
   background-color: #0f1015;
   color: #d5d6dc;
-  font-family: "Geist", sans-serif;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   padding-top: 80px;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "Playfair Display", Georgia, serif;
+h1, h2, h3 {
+  font-family: Georgia, serif;
   color: #ffffff;
   margin-bottom: 15px;
 }
@@ -26,22 +22,15 @@ h1 {
   font-size: 48px;
   line-height: 1.2;
 }
-h2 {
-  font-size: 32px;
-}
-h3 {
-  font-size: 22px;
-}
-p {
-  margin-bottom: 15px;
-}
+h2 { font-size: 32px; }
+h3 { font-size: 22px; }
+p { margin-bottom: 15px; }
 a {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-a:hover,
-nav a.active {
+a:hover, nav a.active {
   color: #ecc078;
 }
 
@@ -72,13 +61,11 @@ header {
   height: 100%;
 }
 .logo {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 24px;
   font-weight: 800;
 }
-.logo span {
-  color: #ecc078;
-}
+.logo span { color: #ecc078; }
 nav ul {
   display: flex;
   list-style: none;
@@ -96,9 +83,7 @@ nav a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(rgba(15, 16, 21, 0.75), rgba(15, 16, 21, 0.95)),
-    url("assets/sigiriya.png") no-repeat center/cover;
+  background: linear-gradient(rgba(15, 16, 21, 0.75), rgba(15, 16, 21, 0.95)), url("assets/sigiriya.png") no-repeat center/cover;
 }
 .hero-subtitle {
   font-size: 13px;
@@ -133,9 +118,7 @@ nav a {
   background-color: #ffffff;
   color: #0f1015;
 }
-.btn:active {
-  transform: scale(0.97);
-}
+.btn:active { transform: scale(0.97); }
 .btn-accent {
   border-color: #ecc078;
   color: #ecc078;
@@ -157,12 +140,8 @@ nav a {
   flex-direction: column;
   transition: border-color 0.2s ease;
 }
-.card:hover {
-  border-color: #ecc078;
-}
-.card-img-wrapper {
-  height: 200px;
-}
+.card:hover { border-color: #ecc078; }
+.card-img-wrapper { height: 200px; }
 .card-img {
   width: 100%;
   height: 100%;
@@ -186,9 +165,7 @@ nav a {
   flex: 1;
 }
 
-ul.guidelines-list {
-  list-style: none;
-}
+ul.guidelines-list { list-style: none; }
 ul.guidelines-list li {
   margin-bottom: 10px;
   padding-left: 15px;
@@ -204,9 +181,8 @@ ol.itinerary-steps {
   padding-left: 20px;
   margin-top: 15px;
 }
-ol.itinerary-steps li {
-  margin-bottom: 10px;
-}
+ol.itinerary-steps li { margin-bottom: 10px; }
+
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -216,8 +192,7 @@ ol.itinerary-steps li {
   width: 100%;
   border-collapse: collapse;
 }
-.travel-table th,
-.travel-table td {
+.travel-table th, .travel-table td {
   padding: 12px 15px;
   border-bottom: 1px solid #2f313e;
   text-align: left;
@@ -229,17 +204,14 @@ ol.itinerary-steps li {
   text-transform: uppercase;
 }
 
-.select-box,
-.detail-card,
-.form-box {
+.select-box, .detail-card, .form-box {
   background-color: #181920;
   border: 1px solid #2f313e;
   padding: 20px;
   margin-top: 20px;
   animation: fadeIn 0.4s ease both;
 }
-.select-control,
-.form-input {
+.select-control, .form-input {
   width: 100%;
   padding: 12px;
   background-color: #0f1015;
@@ -250,10 +222,7 @@ ol.itinerary-steps li {
   outline: none;
   transition: border-color 0.2s ease;
 }
-.select-control:focus,
-.form-input:focus {
-  border-color: #ecc078;
-}
+.select-control:focus, .form-input:focus { border-color: #ecc078; }
 .detail-img {
   width: 100%;
   height: 320px;
@@ -267,15 +236,9 @@ ol.itinerary-steps li {
   padding-bottom: 10px;
   margin-bottom: 20px;
 }
-.hidden {
-  display: none !important;
-}
-.form-box {
-  max-width: 600px;
-}
-.form-group {
-  margin-bottom: 15px;
-}
+.hidden { display: none !important; }
+.form-box { max-width: 600px; }
+.form-group { margin-bottom: 15px; }
 .form-label {
   display: block;
   font-size: 12px;
@@ -311,9 +274,7 @@ ol.itinerary-steps li {
   font-size: 22px;
   margin-bottom: 10px;
 }
-.modal-box p {
-  margin-bottom: 20px;
-}
+.modal-box p { margin-bottom: 20px; }
 
 footer {
   padding: 30px 0;
@@ -322,19 +283,11 @@ footer {
   font-size: 12px;
 }
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @media (max-width: 768px) {
-  nav ul {
-    gap: 10px;
-  }
-  .detail-header {
-    flex-direction: column;
-  }
+  nav ul { gap: 10px; }
+  .detail-header { flex-direction: column; }
 }

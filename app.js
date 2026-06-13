@@ -16,18 +16,6 @@ function checkDestinationParam() {
   }
 }
 
-function calculateTripEstimate() {
-  const select = document.getElementById('calc-select');
-  const daysInput = document.getElementById('calc-days');
-  const totalDisplay = document.getElementById('calc-total');
-  if (!select || !daysInput || !totalDisplay) return;
-
-  const days = parseInt(daysInput.value) || 1;
-  const lodging = parseFloat(select.value) || 0;
-  const fee = parseFloat(select.options[select.selectedIndex].dataset.fee) || 0;
-  totalDisplay.textContent = `$${(lodging * days) + fee} USD`;
-}
-
 function handleInquirySubmit(e) {
   e.preventDefault();
   const nameInput = document.getElementById('inq-name');
