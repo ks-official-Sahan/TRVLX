@@ -121,4 +121,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // === 4. HERO BACKGROUND SLIDESHOW ===
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length > 0) {
+    let currentSlide = 0;
+    const slideInterval = 5000; // 5 seconds interval
+
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+
+    setInterval(nextSlide, slideInterval);
+  }
+
 });
