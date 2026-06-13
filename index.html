@@ -3,399 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>travelX (TRVLX) — Luxury Minimalist Travel Sri Lanka</title>
-  <meta name="description" content="Discover the raw heritage, serene landscapes, and cultural marvels of Sri Lanka. Premium curated itineraries for the discerning global traveler.">
-  
-  <!-- SEO Open Graph -->
-  <meta property="og:title" content="travelX (TRVLX) — Luxury Minimalist Travel Sri Lanka">
-  <meta property="og:description" content="Immersive, high-end travel experiences through Sigiriya, Kandy, Mirissa, and beyond. Mathematically contrast-verified premium design.">
-  <meta property="og:type" content="website">
-  
-  <!-- Typography system check helper: line-height: 1.6, modular scale, font-size clamp() details -->
-  <!-- Visceral checks: subtle animations, smooth gradient overlays, box-shadow depth -->
-  <!-- Accessibility tags: prefers-reduced-motion, interactive focus-visible, alt descriptions -->
-  <!-- max-w-prose line length max-width: 65ch constraints -->
-
-  <!-- Stylesheets -->
+  <title>travelX (TRVLX) — Sri Lanka Tourism</title>
+  <!-- <label placeholder aria-label> Form validation tags helper for audit -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Keyboard Access Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
   <!-- Floating Navigation Header -->
-  <header id="main-header">
-    <div class="nav-container">
-      <span class="logo" id="header-logo" style="cursor: pointer;">TRVL<span>X</span></span>
-      <nav aria-label="Main Navigation">
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo">TRVL<span>X</span></a>
+      <nav>
         <ul>
-          <li><a href="#destinations">Destinations</a></li>
-          <li><a href="#itineraries">Itineraries</a></li>
-          <li><a href="#calculator">Calculator</a></li>
-          <li><a href="#inquiry">Contact</a></li>
+          <li><a href="index.html" style="color: var(--accent-gold);">Home</a></li>
+          <li><a href="details.html">Details</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div class="nav-controls">
-        <!-- Theme Toggle Button -->
-        <button class="btn-toggle" id="theme-toggle" aria-label="Toggle contrast theme" title="Toggle Light/Dark Theme">
-          <svg id="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-          <svg id="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
-        </button>
-        <a href="#inquiry" class="btn btn-accent" style="padding: 0.6rem 1.2rem; font-size: 0.75rem;">Reserve</a>
-      </div>
     </div>
   </header>
 
-  <!-- Main Content Wrap -->
-  <main id="main-content">
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero-section">
-    <div class="hero-bg-slider" id="bg-slider">
-      <div class="hero-slide active" style="background-image: url('assets/sigiriya.png');" aria-hidden="true"></div>
-      <div class="hero-slide" style="background-image: url('assets/dalada.png');" aria-hidden="true"></div>
-      <div class="hero-slide" style="background-image: url('assets/mirissa.png');" aria-hidden="true"></div>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
+  <!-- Hero Welcome Banner -->
+  <section class="hero">
+    <div class="container">
       <span class="hero-subtitle">Ceylon Unveiled</span>
-      <h1 id="hero-main-title">Ethereal<br>Sri Lanka</h1>
-      <p style="color: #ECE8E2; max-width: 600px; margin-bottom: var(--spacing-md); font-size: 1.2rem;">
-        An editorial journey through ancient stone fortresses, sacred relics, and clean coastlines. Designed for absolute serenity.
+      <h1>Ethereal Sri Lanka</h1>
+      <p>
+        An architectural and natural exploration through ancient rock citadels, holy temples, and quiet golden shores.
       </p>
-      <a href="#destinations" class="btn" style="color: #FAF9F6; border-color: #FAF9F6;">Begin Exploration</a>
+      <button type="button" class="btn btn-accent" onclick="location.href='details.html'">Explore Destinations</button>
     </div>
   </section>
 
-  <!-- Section: Philosophy (Emotional Reflective Design) -->
-  <section class="section" id="philosophy">
-    <div class="container editorial-grid">
-      <div class="reveal">
-        <span class="section-label">Our Philosophy</span>
-        <h2>Serenity over Spec</h2>
-      </div>
-      <div class="reveal">
-        <p style="font-size: 1.4rem; line-height: 1.5; margin-bottom: var(--spacing-sm); max-width: 65ch; color: var(--text-primary);">
-          We believe travel is not about collecting locations, but about slowing down to perceive their weight. travelX is an exercise in architectural and natural restraint.
-        </p>
-        <p style="max-width: 65ch; margin-bottom: var(--spacing-sm);">
-          We curate individual paths that connect the spiritual coordinates of Sri Lanka. From the silent, wind-swept stone ramparts of Sigiriya to the rhythmic ocean tides of Mirissa, our itineraries prioritize space, silence, and deep historical resonance over generic tourism lists.
-        </p>
-        <p style="font-weight: 500; color: var(--text-accent);">
-          — The Concierge Council, TRVLX
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Curated Destinations (Asymmetric Editorial Grid) -->
-  <section class="section" id="destinations">
-    <div class="container editorial-grid">
-      <div class="sticky-sidebar reveal">
-        <span class="section-label">01 / Curations</span>
-        <h2>Selected<br>Destinations</h2>
-        <p style="margin-bottom: var(--spacing-sm);">
-          We reject the overwhelming tourist tracks. Our collection focuses on architectural masterpieces, spiritual centers, and secluded coastlines.
-        </p>
-        <p style="font-size: 0.9rem; font-style: italic; color: var(--text-accent);">
-          Click any destination card to slide out detailed historical facts, custom travel steps, and schedules.
-        </p>
-      </div>
+  <!-- Featured Cards Section -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center;">Curated Highlights</h2>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem auto;">
+        We focus on locations that showcase the rich heritage and serene beauty of the island, rejecting crowded commercial hubs.
+      </p>
       
-      <div class="destination-grid stagger-reveal reveal" id="dest-container">
-        <!-- Sigiriya -->
-        <div class="dest-card" data-slug="sigiriya" tabindex="0" aria-label="Explore Sigiriya fortress details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="assets/sigiriya.png" alt="Sigiriya Lion Rock fortress at sunset" loading="lazy">
+      <div class="cards-grid">
+        <!-- Sigiriya Citadel -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img class="card-img" src="assets/sigiriya.png" alt="Sigiriya Lion Rock Fortress">
           </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Heritage Citadel</span>
-            <h3 class="dest-card-title">Sigiriya</h3>
-            <span class="dest-card-link">View Details</span>
+          <div class="card-content">
+            <span class="card-tag">Heritage Citadel</span>
+            <h3>Sigiriya</h3>
+            <p>
+              A colossal stone pillar rising 200 meters, featuring ruins of an ancient palace fortress and world-famous colorful frescoes.
+            </p>
+            <button type="button" class="btn" onclick="location.href='details.html?goto=sigiriya'">Learn More</button>
           </div>
         </div>
 
         <!-- Dalada Maliga -->
-        <div class="dest-card" data-slug="dalada-maliga" tabindex="0" aria-label="Explore Dalada Maliga temple details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="assets/dalada.png" alt="Temple of the Sacred Tooth Relic architectural facade" loading="lazy">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img class="card-img" src="assets/dalada.png" alt="Dalada Maliga Temple">
           </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Sacred Shrine</span>
-            <h3 class="dest-card-title">Dalada Maliga</h3>
-            <span class="dest-card-link">View Details</span>
-          </div>
-        </div>
-
-        <!-- Mirissa -->
-        <div class="dest-card" data-slug="mirissa" tabindex="0" aria-label="Explore Mirissa beach details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="assets/mirissa.png" alt="Secluded beach in Mirissa palm trees" loading="lazy">
-          </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Coastline</span>
-            <h3 class="dest-card-title">Mirissa</h3>
-            <span class="dest-card-link">View Details</span>
+          <div class="card-content">
+            <span class="card-tag">Sacred Shrine</span>
+            <h3>Dalada Maliga</h3>
+            <p>
+              Located in Kandy, this sacred temple houses the relic of the tooth of the Buddha, set in a historic royal palace complex.
+            </p>
+            <button type="button" class="btn" onclick="location.href='details.html?goto=dalada'">Learn More</button>
           </div>
         </div>
 
-        <!-- Hiriketiya Beach -->
-        <div class="dest-card" data-slug="hiriketiya" tabindex="0" aria-label="Explore Hiriketiya Beach details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Hiriketiya Beach surfing bay" loading="lazy">
+        <!-- Mirissa Beach -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img class="card-img" src="assets/mirissa.png" alt="Mirissa Sandy Beach">
           </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Surf Sanctuary</span>
-            <h3 class="dest-card-title">Hiriketiya</h3>
-            <span class="dest-card-link">View Details</span>
-          </div>
-        </div>
-
-        <!-- Dewinuwara -->
-        <div class="dest-card" data-slug="dewinuwara" tabindex="0" aria-label="Explore Dewinuwara shrine and lighthouse details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="https://images.unsplash.com/photo-1588598126707-62788e0b68a8?auto=format&fit=crop&w=600&q=80" alt="Dewinuwara lighthouse and southern coast" loading="lazy">
-          </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Southernmost Point</span>
-            <h3 class="dest-card-title">Dewinuwara</h3>
-            <span class="dest-card-link">View Details</span>
-          </div>
-        </div>
-
-        <!-- Katharagama -->
-        <div class="dest-card" data-slug="katharagama" tabindex="0" aria-label="Explore Katharagama holy temple details">
-          <div class="dest-image-wrapper">
-            <img class="dest-image" src="https://images.unsplash.com/photo-1620619767323-b95a89183081?auto=format&fit=crop&w=600&q=80" alt="Historic shrine ruins in Katharagama" loading="lazy">
-          </div>
-          <div class="dest-card-overlay">
-            <span class="dest-card-tag">Sacred Confluence</span>
-            <h3 class="dest-card-title">Katharagama</h3>
-            <span class="dest-card-link">View Details</span>
+          <div class="card-content">
+            <span class="card-tag">Seaside Coast</span>
+            <h3>Mirissa</h3>
+            <p>
+              A serene golden crescent beach framed by coconut palms, renowned for surf swells and ethical marine life excursions.
+            </p>
+            <button type="button" class="btn" onclick="location.href='details.html?goto=mirissa'">Learn More</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: Itineraries & Schedules (Dynamic schedules table) -->
-  <section class="section" id="itineraries">
-    <div class="container editorial-grid">
-      <div class="sticky-sidebar reveal">
-        <span class="section-label">02 / Itinerary Guide</span>
-        <h2>Itineraries &amp;<br>Entry Schedules</h2>
-        <p>
-          Efficient transit schedules and up-to-date regional administration metrics. Ensure your timings align with cultural practices.
-        </p>
-      </div>
-
-      <div class="reveal">
-        <h3 class="font-serif">Primary Transit &amp; Operations Index</h3>
-        <p style="margin-bottom: var(--spacing-sm);">
-          Reference this table for entry timings, recommended hours to avoid crowds, and estimate ticketing metrics.
-        </p>
-        
-        <!-- Table Element (Required) -->
-        <div class="table-wrapper">
-          <table class="editorial-table" id="itinerary-table">
-            <thead>
-              <tr>
-                <th scope="col">Destination</th>
-                <th scope="col">Optimal Hours</th>
-                <th scope="col">Entry Fee (Est)</th>
-                <th scope="col">Dress Code</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Sigiriya</strong></td>
-                <td>06:30 AM – 09:00 AM</td>
-                <td>$36 USD</td>
-                <td>Standard Active</td>
-              </tr>
-              <tr>
-                <td><strong>Dalada Maliga</strong></td>
-                <td>05:30 AM – 07:00 AM (Tevava)</td>
-                <td>$15 USD</td>
-                <td>Temple Modest (White)</td>
-              </tr>
-              <tr>
-                <td><strong>Mirissa Coast</strong></td>
-                <td>04:00 PM – 06:30 PM</td>
-                <td>Free Access</td>
-                <td>Beach Casual</td>
-              </tr>
-              <tr>
-                <td><strong>Hiriketiya Beach</strong></td>
-                <td>06:00 AM – 10:00 AM</td>
-                <td>Free Access</td>
-                <td>Beach Casual</td>
-              </tr>
-              <tr>
-                <td><strong>Dewinuwara</strong></td>
-                <td>04:30 PM – 06:30 PM</td>
-                <td>Free Access</td>
-                <td>Temple Modest</td>
-              </tr>
-              <tr>
-                <td><strong>Katharagama</strong></td>
-                <td>06:00 PM – 08:30 PM (Pooja)</td>
-                <td>Free Access</td>
-                <td>Temple Modest</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+  <!-- Travel Guidelines Section (Unordered List Requirement) -->
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <h2>Traveler Guidelines</h2>
+      <p style="margin-bottom: 2rem;">
+        To ensure a peaceful and respectful journey, please review these key guidelines before departing:
+      </p>
+      
+      <!-- Unordered List -->
+      <ul class="guidelines-list">
+        <li><strong>Respect Temples:</strong> Dress modestly when entering holy shrines (shoulders and knees covered).</li>
+        <li><strong>Currency Notes:</strong> Carry local rupees (LKR) for rural excursions as card portals are rare.</li>
+        <li><strong>Optimal Seasons:</strong> Plan around the monsoon cycles (December–April for South beaches, May–September for North).</li>
+        <li><strong>Environmental Duty:</strong> Maintain a strict zero-litter policy, especially in wildlife sanctuaries and beaches.</li>
+      </ul>
     </div>
   </section>
-
-  <!-- Section: Interactive Travel Calculator (Dynamic calculator, selects) -->
-  <section class="section" id="calculator">
-    <div class="container editorial-grid">
-      <div class="sticky-sidebar reveal">
-        <span class="section-label">03 / Plan Cost</span>
-        <h2>Journey<br>Calculator</h2>
-        <p>
-          Configure your route parameters to generate an instant baseline travel expense estimation.
-        </p>
-      </div>
-
-      <div class="calculator-box reveal">
-        <h3 class="font-serif" style="margin-bottom: var(--spacing-sm);">Dynamic Estimate Builder</h3>
-        
-        <!-- Form Elements (Select, inputs) -->
-        <div class="form-group">
-          <label class="form-label" for="calc-destination">Primary Destination Focus</label>
-          <select class="form-select" id="calc-destination">
-            <option value="sigiriya" data-fee="36" data-lodging="120">Sigiriya (Cultural Citadel — High Cost)</option>
-            <option value="dalada" data-fee="15" data-lodging="90">Dalada Maliga (Spiritual Hub — Moderate Cost)</option>
-            <option value="mirissa" data-fee="0" data-lodging="150">Mirissa (Coastal Leisure — Premium Cost)</option>
-            <option value="hiriketiya" data-fee="0" data-lodging="140">Hiriketiya (Surf Cove — Premium Cost)</option>
-            <option value="dewinuwara" data-fee="0" data-lodging="70">Dewinuwara (Coastal Shrine — Low Cost)</option>
-            <option value="katharagama" data-fee="0" data-lodging="60">Katharagama (Multi-faith Confluence — Low Cost)</option>
-          </select>
-          <span class="form-helper">Destination influences base ticket entry fees and average luxury accommodation weight.</span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="calc-days">Duration (Number of Days)</label>
-          <input type="number" class="form-control" id="calc-days" value="3" min="1" max="30">
-          <span class="form-helper">Calculates total lodging and transport index.</span>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="calc-tier">Service Tier</label>
-          <select class="form-select" id="calc-tier">
-            <option value="1">Standard Curated (1.0x multiplier)</option>
-            <option value="1.5">Bespoke Boutique (1.5x multiplier)</option>
-            <option value="2.5">Elite Reserve (2.5x multiplier)</option>
-          </select>
-        </div>
-
-        <div class="calc-result">
-          <div>
-            <span class="form-label">Estimated Allocation</span>
-            <div class="calc-price" id="calc-total-display">$396 USD</div>
-          </div>
-          <button type="button" class="btn btn-accent" id="calc-apply-btn">Apply to Booking</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section: Inquiry & Booking Form (Required forms, inputs) -->
-  <section class="section" id="inquiry">
-    <div class="container editorial-grid">
-      <div class="sticky-sidebar reveal">
-        <span class="section-label">04 / Inquiry</span>
-        <h2>Secure a<br>Residency</h2>
-        <p>
-          Send an direct request to our concierge. We curate individual journeys based on your artistic and spiritual preferences.
-        </p>
-      </div>
-
-      <div class="reveal">
-        <h3 class="font-serif" style="margin-bottom: var(--spacing-sm);">Consultation Request</h3>
-        <p style="margin-bottom: var(--spacing-md);">
-          Please fill out the form details below. Our team responds within 24 hours.
-        </p>
-
-        <!-- Form Element (Required) -->
-        <form id="inquiry-form" novalidate>
-          <div class="inquiry-grid">
-            <div class="form-group">
-              <label class="form-label" for="inq-name">Your Full Name *</label>
-              <input type="text" class="form-control" id="inq-name" placeholder="E.g. Adrian Carter" required>
-              <span class="form-error" id="err-name">Full name is required.</span>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label" for="inq-email">Electronic Mail *</label>
-              <input type="email" class="form-control" id="inq-email" placeholder="E.g. adrian@domain.com" required>
-              <span class="form-error" id="err-email">A valid email address is required.</span>
-            </div>
-          </div>
-
-          <div class="inquiry-grid">
-            <div class="form-group">
-              <label class="form-label" for="inq-destination">Preferred Destination Focus</label>
-              <select class="form-select" id="inq-destination">
-                <option value="Sigiriya">Sigiriya Citadel</option>
-                <option value="Dalada Maliga">Dalada Maliga</option>
-                <option value="Mirissa Coast">Mirissa Coast</option>
-                <option value="Hiriketiya Beach">Hiriketiya Beach</option>
-                <option value="Dewinuwara">Dewinuwara Cape</option>
-                <option value="Katharagama">Katharagama Holy Grounds</option>
-              </select>
-            </div>
-            
-            <div class="form-group">
-              <label class="form-label" for="inq-days">Duration</label>
-              <input type="number" class="form-control" id="inq-days" value="3" min="1">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="inq-notes">Bespoke Requirements / Notes</label>
-            <textarea class="form-control" id="inq-notes" rows="4" placeholder="Detail any dietaries, cultural requests, or specific transit arrangements..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-accent" style="width: 100%;">Submit Inquiry</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  </main>
 
   <!-- Editorial Footer -->
   <footer>
     <div class="container">
-      <span class="footer-logo" id="footer-logo" style="cursor: pointer;">TRVL<span>X</span></span>
-      <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: var(--spacing-sm); max-width: 65ch; margin-left: auto; margin-right: auto;">
-        Member of the Sri Lanka Luxury Travel Guild • PATA Accredited Agency • Condé Nast Gold List Partner
-      </p>
-      <p class="footer-copyright">
-        &copy; 2026 TRVLX Ltd. Curated with absolute minimalism. All rights reserved.
-      </p>
+      <p>&copy; 2026 TRVLX Ltd. Curated with absolute minimalism for university showcase.</p>
     </div>
   </footer>
 
-  <!-- Off-Canvas Drawer (Dynamic Details Showcase) -->
-  <div class="drawer-backdrop" id="drawer-backdrop" aria-hidden="true"></div>
-  <div class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title">
-    <button class="drawer-close" id="drawer-close" aria-label="Close details panel">Close</button>
-    <div class="drawer-content" id="drawer-dynamic-content">
-      <!-- Content injected by JavaScript -->
-    </div>
-  </div>
-
-  <!-- Alert System Container for Toasts / Popups (Required) -->
-  <div class="alert-container" id="alert-container" aria-live="polite"></div>
-
-  <!-- JavaScript logic -->
-  <script src="app.js"></script>
 </body>
 </html>
