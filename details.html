@@ -28,7 +28,7 @@
       
       <div class="select-box">
         <label class="form-label" for="destination-select">Choose Destination:</label>
-        <select id="destination-select" class="select-control">
+        <select id="destination-select" class="select-control" onchange="showDestinationCard(this.value)">
           <option value="sigiriya">Sigiriya Fortress</option>
           <option value="dalada">Dalada Maliga</option>
           <option value="mirissa">Mirissa Coast</option>
@@ -131,7 +131,7 @@
           <input type="number" id="calc-days" class="form-input" value="3" min="1">
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-          <button id="btn-calculate" class="btn btn-accent">Calculate</button>
+          <button id="btn-calculate" class="btn btn-accent" onclick="calculateTripEstimate()">Calculate</button>
           <div>
             <p style="font-size: 12px; margin: 0;">Total:</p>
             <p id="calc-total" style="font-size: 24px; color: #ecc078; font-weight: bold; margin: 0;">$396 USD</p>

@@ -6,14 +6,9 @@ function showDestinationCard(val) {
   }
 }
 
-function initCardSelector() {
+function checkDestinationParam() {
   const destSelect = document.getElementById('destination-select');
   if (!destSelect) return;
-
-  destSelect.addEventListener('change', (e) => {
-    showDestinationCard(e.target.value);
-  });
-
   const gotoParam = new URLSearchParams(window.location.search).get('goto');
   if (gotoParam) {
     destSelect.value = gotoParam;
@@ -69,23 +64,5 @@ function initHeroSlideshow() {
   }, 5000);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  initCardSelector();
-
-  const btnCalc = document.getElementById('btn-calculate');
-  if (btnCalc) {
-    btnCalc.addEventListener('click', calculateTripEstimate);
-  }
-
-  const form = document.getElementById('inquiry-form');
-  if (form) {
-    form.addEventListener('submit', handleInquirySubmit);
-  }
-
-  const btnClose = document.getElementById('btn-modal-close');
-  if (btnClose) {
-    btnClose.addEventListener('click', closeSuccessModal);
-  }
-
-  initHeroSlideshow();
-});
+checkDestinationParam();
+initHeroSlideshow();
