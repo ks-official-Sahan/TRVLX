@@ -6,16 +6,6 @@ function showDestinationCard(val) {
   }
 }
 
-function checkDestinationParam() {
-  const destSelect = document.getElementById('destination-select');
-  if (!destSelect) return;
-  const gotoParam = new URLSearchParams(window.location.search).get('goto');
-  if (gotoParam) {
-    destSelect.value = gotoParam;
-    showDestinationCard(gotoParam);
-  }
-}
-
 function handleInquirySubmit(e) {
   e.preventDefault();
   const nameInput = document.getElementById('inq-name');
@@ -52,5 +42,4 @@ function initHeroSlideshow() {
   }, 5000);
 }
 
-checkDestinationParam();
 initHeroSlideshow();
