@@ -1,52 +1,91 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-  const destSelect = document.getElementById('destination-select');
-  if (destSelect) {
-    const showCard = (val) => {
-      document.querySelectorAll('.detail-card').forEach(c => c.classList.add('hidden'));
-      document.getElementById(`card-${val}`)?.classList.remove('hidden');
-    };
-    destSelect.addEventListener('change', (e) => showCard(e.target.value));
-
-    const gotoParam = new URLSearchParams(window.location.search).get('goto');
-    if (gotoParam) {
-      destSelect.value = gotoParam;
-      showCard(gotoParam);
-    }
+function showDestinationCard(val) {
+  document.querySelectorAll('.detail-card').forEach(c => c.classList.add('hidden'));
+  const selectedCard = document.getElementById(`card-${val}`);
+  if (selectedCard) {
+    selectedCard.classList.remove('hidden');
   }
+}
+
+function initCardSelector() {
+  const destSelect = document.getElementById('destination-select');
+  if (!destSelect) return;
+
+  destSelect.addEventListener('change', (e) => {
+    showDestinationCard(e.target.value);
+  });
+
+  const gotoParam = new URLSearchParams(window.location.search).get('goto');
+  if (gotoParam) {
+    destSelect.value = gotoParam;
+    showDestinationCard(gotoParam);
+  }
+}
+
+function calculateTripEstimate() {
+  const select = document.getElementById('calc-select');
+  const daysInput = document.getElementById('calc-days');
+  const totalDisplay = document.getElementById('calc-total');
+  if (!select || !daysInput || !totalDisplay) return;
+
+  const days = parseInt(daysInput.value) || 1;
+  const lodging = parseFloat(select.value) || 0;
+  const fee = parseFloat(select.options[select.selectedIndex].dataset.fee) || 0;
+  totalDisplay.textContent = `$${(lodging * days) + fee} USD`;
+}
+
+function handleInquirySubmit(e) {
+  e.preventDefault();
+  const nameInput = document.getElementById('inq-name');
+  const destSelect = document.getElementById('inq-dest');
+  const msgDisplay = document.getElementById('modal-msg');
+  const modal = document.getElementById('success-modal');
+
+  if (nameInput && destSelect && msgDisplay && modal) {
+    msgDisplay.textContent = `Thank you, ${nameInput.value}. Your inquiry for ${destSelect.value} has been sent.`;
+    modal.classList.add('active');
+  }
+}
+
+function closeSuccessModal() {
+  const modal = document.getElementById('success-modal');
+  const form = document.getElementById('inquiry-form');
+  if (modal) {
+    modal.classList.remove('active');
+  }
+  if (form) {
+    form.reset();
+  }
+}
+
+function initHeroSlideshow() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  const images = ['assets/sigiriya.png', 'assets/dalada.png', 'assets/mirissa.png'];
+  let index = 0;
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `linear-gradient(rgba(15,16,21,0.75), rgba(15,16,21,0.95)), url('${images[index]}')`;
+  }, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCardSelector();
 
   const btnCalc = document.getElementById('btn-calculate');
   if (btnCalc) {
-    btnCalc.addEventListener('click', () => {
-      const select = document.getElementById('calc-select');
-      const days = parseInt(document.getElementById('calc-days').value) || 1;
-      const lodging = parseFloat(select.value) || 0;
-      const fee = parseFloat(select.options[select.selectedIndex].dataset.fee) || 0;
-      document.getElementById('calc-total').textContent = `$${(lodging * days) + fee} USD`;
-    });
+    btnCalc.addEventListener('click', calculateTripEstimate);
   }
 
   const form = document.getElementById('inquiry-form');
-  const modal = document.getElementById('success-modal');
-  if (form && modal) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      document.getElementById('modal-msg').textContent = `Thank you, ${document.getElementById('inq-name').value}. Your inquiry for ${document.getElementById('inq-dest').value} has been sent.`;
-      modal.classList.add('active');
-    });
-    document.getElementById('btn-modal-close').addEventListener('click', () => {
-      modal.classList.remove('active');
-      form.reset();
-    });
+  if (form) {
+    form.addEventListener('submit', handleInquirySubmit);
   }
 
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    const imgs = ['assets/sigiriya.png', 'assets/dalada.png', 'assets/mirissa.png'];
-    let idx = 0;
-    setInterval(() => {
-      idx = (idx + 1) % imgs.length;
-      hero.style.backgroundImage = `linear-gradient(rgba(15,16,21,0.75), rgba(15,16,21,0.95)), url('${imgs[idx]}')`;
-    }, 5000);
+  const btnClose = document.getElementById('btn-modal-close');
+  if (btnClose) {
+    btnClose.addEventListener('click', closeSuccessModal);
   }
+
+  initHeroSlideshow();
 });
