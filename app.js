@@ -1,138 +1,58 @@
 /* travelX (TRVLX) - Simplified Script Logic */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  // === 1. DESTINATION SELECTOR / CARD TOGGLING ===
+  // 1. Destination Card Toggling
   const destSelect = document.getElementById('destination-select');
-  const cards = {
-    'sigiriya': document.getElementById('card-sigiriya'),
-    'dalada': document.getElementById('card-dalada'),
-    'mirissa': document.getElementById('card-mirissa')
-  };
-
-  function showCard(selectedValue) {
-    // Hide all cards first by adding the 'hidden' class
-    for (const key in cards) {
-      if (cards[key]) {
-        cards[key].classList.add('hidden');
-      }
-    }
-    // Show the selected card by removing the 'hidden' class
-    if (cards[selectedValue]) {
-      cards[selectedValue].classList.remove('hidden');
-    }
-  }
-
   if (destSelect) {
-    destSelect.addEventListener('change', (e) => {
-      showCard(e.target.value);
-    });
+    const showCard = (val) => {
+      document.querySelectorAll('.detail-card').forEach(c => c.classList.add('hidden'));
+      document.getElementById(`card-${val}`)?.classList.remove('hidden');
+    };
+    destSelect.addEventListener('change', (e) => showCard(e.target.value));
 
-    // Check URL Parameters (e.g. details.html?goto=mirissa from Home page links)
-    const urlParams = new URLSearchParams(window.location.search);
-    const gotoParam = urlParams.get('goto');
-    if (gotoParam && cards[gotoParam]) {
+    // Handle URL parameters (e.g. details.html?goto=mirissa)
+    const gotoParam = new URLSearchParams(window.location.search).get('goto');
+    if (gotoParam) {
       destSelect.value = gotoParam;
       showCard(gotoParam);
     }
   }
 
-
-  // === 2. DYNAMIC TRIP CALCULATOR ===
-  const calcSelect = document.getElementById('calc-select');
-  const calcDays = document.getElementById('calc-days');
-  const calcTotalText = document.getElementById('calc-total');
-  const btnCalculate = document.getElementById('btn-calculate');
-
-  function calculateTrip() {
-    if (!calcSelect || !calcDays || !calcTotalText) return;
-
-    // Get lodging rate from the selected option value
-    const dailyLodging = parseFloat(calcSelect.value) || 0;
-    
-    // Get entry ticket fee from custom data attribute
-    const selectedOption = calcSelect.options[calcSelect.selectedIndex];
-    const ticketFee = parseFloat(selectedOption.getAttribute('data-fee')) || 0;
-    
-    const days = parseInt(calcDays.value) || 1;
-
-    // Calculate sum
-    const totalEstimate = (dailyLodging * days) + ticketFee;
-
-    // Update UI text display
-    calcTotalText.textContent = `$${totalEstimate} USD`;
-  }
-
-  if (btnCalculate) {
-    btnCalculate.addEventListener('click', calculateTrip);
-    // Also update dynamically when inputs change
-    calcSelect.addEventListener('change', calculateTrip);
-    calcDays.addEventListener('input', calculateTrip);
-  }
-
-
-  // === 3. RESERVATION FORM VALIDATION & POPUP MODAL ===
-  const inquiryForm = document.getElementById('inquiry-form');
-  const inqName = document.getElementById('inq-name');
-  const inqEmail = document.getElementById('inq-email');
-  const inqDest = document.getElementById('inq-dest');
-  const successModal = document.getElementById('success-modal');
-  const btnModalClose = document.getElementById('btn-modal-close');
-  const modalMsg = document.getElementById('modal-msg');
-
-  if (inquiryForm) {
-    inquiryForm.addEventListener('submit', (e) => {
-      e.preventDefault(); // Stop standard page reload
-
-      const nameVal = inqName.value.trim();
-      const emailVal = inqEmail.value.trim();
-
-      // Basic validation checks
-      if (nameVal === "") {
-        alert("Please enter your full name.");
-        inqName.focus();
-        return;
-      }
-
-      if (emailVal === "" || !emailVal.includes("@")) {
-        alert("Please enter a valid email address.");
-        inqEmail.focus();
-        return;
-      }
-
-      // If valid, customize the modal text and show the modal popup
-      if (modalMsg) {
-        modalMsg.textContent = `Thank you, ${nameVal}. Your inquiry for the ${inqDest.value} has been sent. Our team will contact you at ${emailVal} shortly.`;
-      }
-      
-      if (successModal) {
-        successModal.classList.add('active'); // CSS activates display overlay
-      }
+  // 2. Trip Calculator
+  const btnCalc = document.getElementById('btn-calculate');
+  if (btnCalc) {
+    btnCalc.addEventListener('click', () => {
+      const select = document.getElementById('calc-select');
+      const days = parseInt(document.getElementById('calc-days').value) || 1;
+      const lodging = parseFloat(select.value) || 0;
+      const fee = parseFloat(select.options[select.selectedIndex].dataset.fee) || 0;
+      document.getElementById('calc-total').textContent = `$${(lodging * days) + fee} USD`;
     });
   }
 
-  // Close popup modal handler
-  if (btnModalClose && successModal) {
-    btnModalClose.addEventListener('click', () => {
-      successModal.classList.remove('active');
-      if (inquiryForm) {
-        inquiryForm.reset(); // Clear form inputs
-      }
+  // 3. Form Submission & Modal Dialog
+  const form = document.getElementById('inquiry-form');
+  const modal = document.getElementById('success-modal');
+  if (form && modal) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('modal-msg').textContent = `Thank you, ${document.getElementById('inq-name').value}. Your inquiry for ${document.getElementById('inq-dest').value} has been sent.`;
+      modal.classList.add('active');
+    });
+    document.getElementById('btn-modal-close').addEventListener('click', () => {
+      modal.classList.remove('active');
+      form.reset();
     });
   }
 
-  // === 4. HERO BACKGROUND SLIDESHOW ===
+  // 4. Hero Background Slideshow
   const hero = document.querySelector('.hero');
-  const bgImages = [
-    'assets/sigiriya.png',
-    'assets/dalada.png',
-    'assets/mirissa.png'
-  ];
   if (hero) {
-    let currentIndex = 0;
+    const imgs = ['assets/sigiriya.png', 'assets/dalada.png', 'assets/mirissa.png'];
+    let idx = 0;
     setInterval(() => {
-      currentIndex = (currentIndex + 1) % bgImages.length;
-      hero.style.backgroundImage = `linear-gradient(rgba(15, 16, 21, 0.75), rgba(15, 16, 21, 0.95)), url('${bgImages[currentIndex]}')`;
+      idx = (idx + 1) % imgs.length;
+      hero.style.backgroundImage = `linear-gradient(rgba(15,16,21,0.75), rgba(15,16,21,0.95)), url('${imgs[idx]}')`;
     }, 5000);
   }
 

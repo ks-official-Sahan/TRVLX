@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destinations — travelX</title>
-  <meta name="description" content="View detailed itineraries, travel guidelines, interactive schedules, and calculate estimated costs for Sri Lanka's top travel destinations.">
+  <meta name="description" content="View itineraries, comparative table schedules, and estimate trip costs for Sri Lanka.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Floating Navigation Header -->
   <header>
     <div class="container nav-container">
       <a href="index.html" class="logo">TRVL<span>X</span></a>
@@ -23,135 +22,94 @@
     </div>
   </header>
 
-  <!-- Dropdown Explorer Section -->
   <section class="section">
     <div class="container">
       <h1>Destination explorer</h1>
-      <p style="margin-bottom: 2rem;">
-        Select a location from the dropdown menu below to view customized itineraries and travel steps.
-      </p>
-
-      <!-- Dropdown Select (Required) -->
+      
       <div class="select-box">
-        <label class="form-label" for="destination-select" style="margin-bottom: 0.75rem;">Choose Destination:</label>
+        <label class="form-label" for="destination-select">Choose Destination:</label>
         <select id="destination-select" class="select-control">
-          <option value="sigiriya">Sigiriya Fortress (Cultural Citadel)</option>
-          <option value="dalada">Dalada Maliga (Sacred Temple)</option>
-          <option value="mirissa">Mirissa Coast (Seaside Leisure)</option>
+          <option value="sigiriya">Sigiriya Fortress</option>
+          <option value="dalada">Dalada Maliga</option>
+          <option value="mirissa">Mirissa Coast</option>
         </select>
       </div>
 
       <!-- Detail Card: Sigiriya -->
       <div id="card-sigiriya" class="detail-card">
         <div class="detail-header">
-          <div>
-            <h3>Sigiriya Fortress</h3>
-            <p style="color: var(--accent-gold); font-style: italic;">Heritage Citadel</p>
-          </div>
-          <p>Entrance: $36 USD</p>
+          <h3>Sigiriya Fortress</h3>
+          <p>$36 USD</p>
         </div>
-        <img src="assets/sigiriya.png" alt="Sigiriya Lion Rock" class="detail-img">
-        <p>
-          Sigiriya is an ancient rock fortress located in the northern Matale District. King Kashyapa built his palace on top of this rock and decorated its sides with colorful frescoes.
-        </p>
-        <h4 style="margin-top: 1.5rem; color: var(--text-light);">Recommended route steps:</h4>
-        <!-- Ordered List (Required) -->
+        <img src="assets/sigiriya.png" alt="Sigiriya" class="detail-img">
+        <p>Sigiriya is an ancient rock fortress featuring a royal palace and historic frescoes.</p>
         <ol class="itinerary-steps">
-          <li>Arrive at the ticket counter by 06:30 AM to avoid heat.</li>
-          <li>Walk through the symmetric royal water gardens.</li>
-          <li>Ascend the metal stairs past the celestial maidens frescoes.</li>
-          <li>Pause at the Lion's Paw terrace before the final climb.</li>
-          <li>Reach the summit ruins and enjoy the panoramic forest view.</li>
+          <li>Arrive by 06:30 AM to avoid midday heat.</li>
+          <li>Walk through the symmetric water gardens.</li>
+          <li>Ascend the final stairs to the summit.</li>
         </ol>
       </div>
 
       <!-- Detail Card: Dalada Maliga -->
       <div id="card-dalada" class="detail-card hidden">
         <div class="detail-header">
-          <div>
-            <h3>Dalada Maliga</h3>
-            <p style="color: var(--accent-gold); font-style: italic;">Sacred Shrine</p>
-          </div>
-          <p>Entrance: $15 USD</p>
+          <h3>Dalada Maliga</h3>
+          <p>$15 USD</p>
         </div>
-        <img src="assets/dalada.png" alt="Dalada Maliga Temple" class="detail-img">
-        <p>
-          The Temple of the Sacred Tooth Relic is a Buddhist temple in Kandy, Sri Lanka. It is located in the royal palace complex of the former Kingdom of Kandy, which houses the relic of the tooth of the Buddha.
-        </p>
-        <h4 style="margin-top: 1.5rem; color: var(--text-light);">Recommended route steps:</h4>
-        <!-- Ordered List (Required) -->
+        <img src="assets/dalada.png" alt="Dalada Maliga" class="detail-img">
+        <p>A sacred temple in Kandy housing the tooth relic of the Buddha.</p>
         <ol class="itinerary-steps">
-          <li>Wear modest attire covering shoulders and knees (preferably white).</li>
-          <li>Deposit footwear at the designated storage counter.</li>
-          <li>Purchase entry token and cross the moat bridge.</li>
-          <li>Join the queue ascending to the relic vault room.</li>
-          <li>Visit the assembly hall to view historic paintings and murals.</li>
+          <li>Wear modest attire covering shoulders and knees.</li>
+          <li>Deposit footwear at the storage counter.</li>
+          <li>Join the queue ascending to the relic room.</li>
         </ol>
       </div>
 
       <!-- Detail Card: Mirissa -->
       <div id="card-mirissa" class="detail-card hidden">
         <div class="detail-header">
-          <div>
-            <h3>Mirissa Beach</h3>
-            <p style="color: var(--accent-gold); font-style: italic;">Seaside Coast</p>
-          </div>
-          <p>Entrance: Free</p>
+          <h3>Mirissa Beach</h3>
+          <p>Free</p>
         </div>
-        <img src="assets/mirissa.png" alt="Mirissa Sandy Shore" class="detail-img">
-        <p>
-          Mirissa is a small town on the south coast of Sri Lanka. It is popular for beach activities, whale watching excursions, and beautiful photo locations like the red-earth Coconut Tree Hill.
-        </p>
-        <h4 style="margin-top: 1.5rem; color: var(--text-light);">Recommended route steps:</h4>
-        <!-- Ordered List (Required) -->
+        <img src="assets/mirissa.png" alt="Mirissa" class="detail-img">
+        <p>A quiet coastal beach town popular for surfing and whale watching.</p>
         <ol class="itinerary-steps">
-          <li>Enjoy a quiet morning stroll along the main sandy crescent.</li>
-          <li>Rent a beach lounger from a wooden cafe.</li>
-          <li>Walk to Coconut Tree Hill around 04:30 PM for sunset photos.</li>
-          <li>Dine at beachside grills under candlelight.</li>
+          <li>Enjoy a stroll along the sandy crescent.</li>
+          <li>Rent a beach lounger from a local cafe.</li>
+          <li>Walk to Coconut Tree Hill for sunset.</li>
         </ol>
       </div>
 
     </div>
   </section>
 
-  <!-- Operations Comparison Table (Required Table Element) -->
   <section class="section">
     <div class="container">
-      <h2>Schedules &amp; operations index</h2>
-      <p style="margin-bottom: 1.5rem;">
-        Reference this index to compare details, visiting hours, and fees side-by-side:
-      </p>
-
-      <!-- Table Element -->
+      <h2>Schedules &amp; fees</h2>
       <div class="table-wrapper">
         <table class="travel-table">
           <thead>
             <tr>
               <th>Destination</th>
-              <th>Optimal Hours</th>
-              <th>Estimate Fee</th>
-              <th>Attire Requirement</th>
+              <th>Hours</th>
+              <th>Fee</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Sigiriya</strong></td>
+              <td>Sigiriya</td>
               <td>06:30 AM – 09:00 AM</td>
               <td>$36 USD</td>
-              <td>Active Casual</td>
             </tr>
             <tr>
-              <td><strong>Dalada Maliga</strong></td>
+              <td>Dalada Maliga</td>
               <td>05:30 AM – 07:00 AM</td>
               <td>$15 USD</td>
-              <td>Temple Modest (White)</td>
             </tr>
             <tr>
-              <td><strong>Mirissa Coast</strong></td>
+              <td>Mirissa Coast</td>
               <td>04:00 PM – 06:30 PM</td>
               <td>Free</td>
-              <td>Beach Casual</td>
             </tr>
           </tbody>
         </table>
@@ -159,49 +117,39 @@
     </div>
   </section>
 
-  <!-- Budget Estimator Tool (Dynamic Select & Input) -->
   <section class="section">
-    <div class="container" style="max-width: 600px;">
-      <h2>Quick trip calculator</h2>
-      <p style="margin-bottom: 1.5rem;">
-        Estimate your base expense rate for lodging and tickets:
-      </p>
-
-      <div class="form-box" style="margin: 0;">
+    <div class="container">
+      <h2>Trip calculator</h2>
+      <div class="form-box">
         <div class="form-group">
-          <label class="form-label" for="calc-select">Select Location</label>
+          <label class="form-label" for="calc-select">Location</label>
           <select id="calc-select" class="form-input">
-            <!-- value represents daily average lodging cost, ticket-fee is read by JS -->
-            <option value="120" data-fee="36">Sigiriya ($120/day + $36 entry)</option>
-            <option value="90" data-fee="15">Dalada Maliga ($90/day + $15 entry)</option>
-            <option value="140" data-fee="0">Mirissa Beach ($140/day + $0 entry)</option>
+            <option value="120" data-fee="36">Sigiriya ($120/day + $36)</option>
+            <option value="90" data-fee="15">Dalada Maliga ($90/day + $15)</option>
+            <option value="140" data-fee="0">Mirissa Beach ($140/day)</option>
           </select>
         </div>
-
         <div class="form-group">
-          <label class="form-label" for="calc-days">Days of Travel</label>
-          <input type="number" id="calc-days" class="form-input" value="3" min="1" max="30">
+          <label class="form-label" for="calc-days">Days</label>
+          <input type="number" id="calc-days" class="form-input" value="3" min="1">
         </div>
-
-        <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
-          <button type="button" id="btn-calculate" class="btn btn-accent">Calculate</button>
-          <div style="text-align: right;">
-            <p style="font-size: 0.8rem; margin: 0;">Estimated Total:</p>
-            <p id="calc-total" style="font-size: 1.8rem; font-family: var(--font-serif); color: var(--accent-gold);">$396 USD</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+          <button id="btn-calculate" class="btn btn-accent">Calculate</button>
+          <div>
+            <p style="font-size: 12px; margin: 0;">Total:</p>
+            <p id="calc-total" style="font-size: 24px; color: #ecc078; font-weight: bold; margin: 0;">$396 USD</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 TRVLX Ltd. Curated with absolute minimalism for university showcase.</p>
+      <p>&copy; 2026 TRVLX Ltd.</p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
