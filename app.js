@@ -122,18 +122,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === 4. HERO BACKGROUND SLIDESHOW ===
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length > 0) {
-    let currentSlide = 0;
-    const slideInterval = 5000; // 5 seconds interval
-
-    function nextSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
-
-    setInterval(nextSlide, slideInterval);
+  const hero = document.querySelector('.hero');
+  const bgImages = [
+    'assets/sigiriya.png',
+    'assets/dalada.png',
+    'assets/mirissa.png'
+  ];
+  if (hero) {
+    let currentIndex = 0;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % bgImages.length;
+      hero.style.backgroundImage = `linear-gradient(rgba(15, 16, 21, 0.75), rgba(15, 16, 21, 0.95)), url('${bgImages[currentIndex]}')`;
+    }, 5000);
   }
 
 });
