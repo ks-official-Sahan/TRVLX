@@ -1,5 +1,5 @@
 * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
-body { background-color: #0f1015; color: #d5d6dc; font-family: system-ui, sans-serif; font-size: 16px; line-height: 1.6; padding-top: 80px; }
+body { background-color: #0f1015; color: #d5d6dc; font-family: system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 1.6; padding-top: 80px; }
 
 h1, h2, h3 { font-family: Georgia, serif; color: #ffffff; margin-bottom: 15px; }
 h1 { font-size: 48px; line-height: 1.2; }
@@ -27,44 +27,38 @@ nav a { font-size: 13px; text-transform: uppercase; font-weight: 500; }
 .btn { display: inline-block; padding: 12px 24px; background-color: transparent; color: #ffffff; border: 1px solid #ffffff; font-size: 13px; cursor: pointer; transition: all 0.2s ease; }
 .btn:hover { background-color: #ffffff; color: #0f1015; }
 .btn:active { transform: scale(0.97); }
-.btn-accent { border-color: #ecc078; color: #ecc078; }
-.btn-accent:hover { background-color: #ecc078; color: #0f1015; }
+.btn.accent { border-color: #ecc078; color: #ecc078; }
+.btn.accent:hover { background-color: #ecc078; color: #0f1015; }
 
-.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
 .card { background-color: #181920; border: 1px solid #2f313e; display: flex; flex-direction: column; transition: border-color 0.2s ease; }
 .card:hover { border-color: #ecc078; }
-.card-img-wrapper { height: 200px; }
-.card-img { width: 100%; height: 100%; object-fit: cover; }
+.card img { width: 100%; height: 200px; object-fit: cover; }
 .card-content { padding: 20px; display: flex; flex-direction: column; flex: 1; }
-.card-tag { font-size: 11px; color: #ecc078; text-transform: uppercase; margin-bottom: 5px; }
+.tag { font-size: 11px; color: #ecc078; text-transform: uppercase; margin-bottom: 5px; display: block; }
 .card-content p { font-size: 14px; margin-bottom: 20px; flex: 1; }
 
-ul.guidelines-list { list-style: none; }
-ul.guidelines-list li { margin-bottom: 10px; padding-left: 15px; position: relative; }
-ul.guidelines-list li::before { content: "▪"; color: #ecc078; position: absolute; left: 0; }
-ol.itinerary-steps { padding-left: 20px; margin-top: 15px; }
-ol.itinerary-steps li { margin-bottom: 10px; }
+.guidelines { list-style: none; }
+.guidelines li { margin-bottom: 10px; padding-left: 15px; position: relative; }
+.guidelines li::before { content: "▪"; color: #ecc078; position: absolute; left: 0; }
+ol { padding-left: 20px; margin-top: 15px; }
+ol li { margin-bottom: 10px; }
 
-.table-wrapper { width: 100%; overflow-x: auto; border: 1px solid #2f313e; }
-.travel-table { width: 100%; border-collapse: collapse; }
-.travel-table th, .travel-table td { padding: 12px 15px; border-bottom: 1px solid #2f313e; text-align: left; }
-.travel-table th { background-color: #181920; font-size: 12px; text-transform: uppercase; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px 15px; border-bottom: 1px solid #2f313e; text-align: left; }
+th { background-color: #181920; color: #ffffff; font-size: 12px; text-transform: uppercase; }
 
-.select-box, .detail-card, .form-box { background-color: #181920; border: 1px solid #2f313e; padding: 20px; margin-top: 20px; animation: fadeIn 0.4s ease both; }
-.select-control, .form-input { width: 100%; padding: 12px; background-color: #0f1015; color: #ffffff; border: 1px solid #2f313e; font-family: inherit; font-size: 14px; outline: none; transition: border-color 0.2s ease; }
-.select-control:focus, .form-input:focus { border-color: #ecc078; }
+.box { background-color: #181920; border: 1px solid #2f313e; padding: 20px; margin-top: 20px; }
+label { display: block; font-size: 12px; margin-bottom: 5px; color: #ffffff; }
+input, select, textarea { width: 100%; padding: 12px; background-color: #0f1015; color: #ffffff; border: 1px solid #2f313e; font-family: inherit; font-size: 14px; outline: none; margin-bottom: 15px; }
+input:focus, select:focus, textarea:focus { border-color: #ecc078; }
+
 .detail-img { width: 100%; height: 320px; object-fit: cover; margin-bottom: 20px; }
 .detail-header { display: flex; justify-content: space-between; border-bottom: 1px solid #2f313e; padding-bottom: 10px; margin-bottom: 20px; }
 .hidden { display: none !important; }
-.form-box { max-width: 600px; }
-.form-group { margin-bottom: 15px; }
-.form-label { display: block; font-size: 12px; margin-bottom: 5px; }
 
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); display: none; justify-content: center; align-items: center; z-index: 1000; }
-.modal-overlay.active { display: flex; animation: fadeIn 0.3s ease both; }
-.modal-box { background-color: #181920; border: 1px solid #ecc078; padding: 30px; max-width: 450px; width: 90%; text-align: center; }
-.modal-box h3 { color: #ecc078; font-size: 22px; margin-bottom: 10px; }
-.modal-box p { margin-bottom: 20px; }
+dialog { background-color: #181920; border: 1px solid #ecc078; padding: 30px; max-width: 450px; width: 90%; color: #d5d6dc; text-align: center; margin: auto; }
+dialog::backdrop { background-color: rgba(0, 0, 0, 0.8); }
 
 footer { padding: 30px 0; text-align: center; border-top: 1px solid #2f313e; font-size: 12px; }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }

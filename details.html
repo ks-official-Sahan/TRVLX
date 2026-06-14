@@ -26,51 +26,51 @@
     <div class="container">
       <h1>Destination explorer</h1>
       
-      <div class="select-box">
-        <label class="form-label" for="destination-select">Choose Destination:</label>
-        <select id="destination-select" class="select-control" onchange="showDestinationCard(this.value)">
+      <div class="box">
+        <label for="destination-select">Choose Destination:</label>
+        <select id="destination-select" onchange="showDestinationCard(this.value)">
           <option value="sigiriya">Sigiriya Fortress</option>
           <option value="dalada">Dalada Maliga</option>
           <option value="mirissa">Mirissa Coast</option>
         </select>
       </div>
 
-      <div id="card-sigiriya" class="detail-card">
+      <div id="card-sigiriya" class="box detail-card">
         <div class="detail-header">
           <h3>Sigiriya Fortress</h3>
           <p>$36 USD</p>
         </div>
         <img src="assets/sigiriya.png" alt="Sigiriya" class="detail-img">
         <p>Sigiriya is an ancient rock fortress featuring a royal palace and historic frescoes.</p>
-        <ol class="itinerary-steps">
+        <ol>
           <li>Arrive by 06:30 AM to avoid midday heat.</li>
           <li>Walk through the symmetric water gardens.</li>
           <li>Ascend the final stairs to the summit.</li>
         </ol>
       </div>
 
-      <div id="card-dalada" class="detail-card hidden">
+      <div id="card-dalada" class="box detail-card hidden">
         <div class="detail-header">
           <h3>Dalada Maliga</h3>
           <p>$15 USD</p>
         </div>
         <img src="assets/dalada.png" alt="Dalada Maliga" class="detail-img">
         <p>A sacred temple in Kandy housing the tooth relic of the Buddha.</p>
-        <ol class="itinerary-steps">
+        <ol>
           <li>Wear modest attire covering shoulders and knees.</li>
           <li>Deposit footwear at the storage counter.</li>
           <li>Join the queue ascending to the relic room.</li>
         </ol>
       </div>
 
-      <div id="card-mirissa" class="detail-card hidden">
+      <div id="card-mirissa" class="box detail-card hidden">
         <div class="detail-header">
           <h3>Mirissa Beach</h3>
           <p>Free</p>
         </div>
         <img src="assets/mirissa.png" alt="Mirissa" class="detail-img">
         <p>A quiet coastal beach town popular for surfing and whale watching.</p>
-        <ol class="itinerary-steps">
+        <ol>
           <li>Enjoy a stroll along the sandy crescent.</li>
           <li>Rent a beach lounger from a local cafe.</li>
           <li>Walk to Coconut Tree Hill for sunset.</li>
@@ -83,38 +83,34 @@
   <section class="section">
     <div class="container">
       <h2>Schedules &amp; fees</h2>
-      <div class="table-wrapper">
-        <table class="travel-table">
-          <thead>
-            <tr>
-              <th>Destination</th>
-              <th>Hours</th>
-              <th>Fee</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Sigiriya</td>
-              <td>06:30 AM – 09:00 AM</td>
-              <td>$36 USD</td>
-            </tr>
-            <tr>
-              <td>Dalada Maliga</td>
-              <td>05:30 AM – 07:00 AM</td>
-              <td>$15 USD</td>
-            </tr>
-            <tr>
-              <td>Mirissa Coast</td>
-              <td>04:00 PM – 06:30 PM</td>
-              <td>Free</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="travel-table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Hours</th>
+            <th>Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sigiriya</td>
+            <td>06:30 AM – 09:00 AM</td>
+            <td>$36 USD</td>
+          </tr>
+          <tr>
+            <td>Dalada Maliga</td>
+            <td>05:30 AM – 07:00 AM</td>
+            <td>$15 USD</td>
+          </tr>
+          <tr>
+            <td>Mirissa Coast</td>
+            <td>04:00 PM – 06:30 PM</td>
+            <td>Free</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
-
-
 
   <footer>
     <div class="container">

@@ -8,26 +8,15 @@ function showDestinationCard(val) {
 
 function handleInquirySubmit(e) {
   e.preventDefault();
-  const nameInput = document.getElementById('inq-name');
-  const destSelect = document.getElementById('inq-dest');
-  const msgDisplay = document.getElementById('modal-msg');
-  const modal = document.getElementById('success-modal');
-
-  if (nameInput && destSelect && msgDisplay && modal) {
-    msgDisplay.textContent = `Thank you, ${nameInput.value}. Your inquiry for ${destSelect.value} has been sent.`;
-    modal.classList.add('active');
-  }
+  const name = document.getElementById('inq-name').value;
+  const dest = document.getElementById('inq-dest').value;
+  document.getElementById('modal-msg').textContent = `Thank you, ${name}. Your inquiry for ${dest} has been sent.`;
+  document.getElementById('success-modal').showModal();
 }
 
 function closeSuccessModal() {
-  const modal = document.getElementById('success-modal');
-  const form = document.getElementById('inquiry-form');
-  if (modal) {
-    modal.classList.remove('active');
-  }
-  if (form) {
-    form.reset();
-  }
+  document.getElementById('success-modal').close();
+  document.getElementById('inquiry-form').reset();
 }
 
 function initHeroSlideshow() {
