@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #0f1015;
   color: #d5d6dc;
@@ -21,7 +25,7 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  height: 64px;
 }
 
 .logo {
@@ -75,11 +79,13 @@ nav a:hover, nav a.active {
   color: #ecc078;
   border: 1px solid #ecc078;
   cursor: pointer;
+  transition: background-color 0.5s ease, transform 0.5s ease;
 }
 
 .btn:hover {
   background-color: #ecc078;
   color: #0f1015;
+  transform: translateY(-4);
 }
 
 .grid {
@@ -95,6 +101,12 @@ nav a:hover, nav a.active {
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: #ecc078;
+  transform: translateY(-4px);
 }
 
 .card img {
@@ -123,6 +135,29 @@ nav a:hover, nav a.active {
   border-bottom: 1px solid #2f313e;
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #2f313e;
+  text-align: left;
+}
+
+th {
+  background-color: #181920;
+  color: #ffffff;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
 .box {
   background-color: #181920;
   border: 1px solid #2f313e;
@@ -144,6 +179,7 @@ input, select, textarea {
   color: #ffffff;
   border: 1px solid #2f313e;
   margin-bottom: 15px;
+  font-family: inherit;
 }
 
 .detail-img {
@@ -177,4 +213,19 @@ footer {
   padding: 30px 0;
   text-align: center;
   font-size: 12px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero, .section, .box, dialog[open] {
+  animation: fadeIn 0.5s ease-out;
 }
