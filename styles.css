@@ -17,10 +17,12 @@ body.contact-page {
   transition: background-image 1s ease-in-out;
 }
 
+/* Backgrounds */
 header, .box, dialog {
   background-color: #181920;
 }
 
+/* Typography & Colors */
 .logo, .hero h1, label, dialog, input, select, textarea {
   color: #ffffff;
 }
@@ -29,6 +31,7 @@ header, .box, dialog {
   color: #ecc078;
 }
 
+/* Borders */
 header, .hero, .section, th, td, .details-header {
   border-bottom: 1px solid #2f313e;
 }
@@ -43,10 +46,13 @@ header, .hero, .section, th, td, .details-header {
   padding: 20px;
 }
 
-header .container {
+header .container, .details-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+header .container {
   height: 64px;
 }
 
@@ -59,6 +65,8 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 20px;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
@@ -78,22 +86,20 @@ nav a:hover, nav a.active {
   text-align: center;
 }
 
-.hero video {
+.hero video, .hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.hero video {
   object-fit: cover;
   z-index: 1;
 }
 
 .hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(rgba(15, 16, 21, 0.7), rgba(15, 16, 21, 0.9));
   z-index: 2;
 }
@@ -120,13 +126,12 @@ nav a:hover, nav a.active {
   color: #ecc078;
   border: 1px solid #ecc078;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
   background-color: #ecc078;
   color: #0f1015;
-  transform: translateY(-2px);
 }
 
 .grid {
@@ -140,12 +145,10 @@ nav a:hover, nav a.active {
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
   border-color: #ecc078;
-  transform: translateY(-4px);
 }
 
 .card img, .box img {
@@ -167,7 +170,6 @@ nav a:hover, nav a.active {
 }
 
 .card-body h3 {
-  color: #ffffff;
   margin: 10px 0;
 }
 
@@ -177,7 +179,6 @@ nav a:hover, nav a.active {
 
 .table-container {
   overflow-x: auto;
-  padding: 0;
 }
 
 table {
@@ -236,8 +237,6 @@ input, select, textarea {
 }
 
 .details-header {
-  display: flex;
-  justify-content: space-between;
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -256,19 +255,4 @@ footer {
   padding: 30px 0;
   text-align: center;
   font-size: 12px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero, .section, .box, dialog[open] {
-  animation: fadeIn 0.5s ease-out;
 }
