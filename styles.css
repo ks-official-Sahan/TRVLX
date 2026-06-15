@@ -10,15 +10,40 @@ body {
   padding: 0;
 }
 
+body.contact-page {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 1s ease-in-out;
+}
+
+/* Common Backgrounds */
+header, .box, dialog {
+  background-color: #181920;
+}
+
+/* Common Text Colors */
+.logo, .hero h1, .card-content h3, label, dialog, input, select, textarea {
+  color: #ffffff;
+}
+
+.logo span, .tag, .travel-table td:last-child {
+  color: #ecc078;
+}
+
+/* Common Borders */
+header, .hero, .section, .travel-table th, .travel-table td, .detail-header {
+  border-bottom: 1px solid #2f313e;
+}
+
+.card, .box, input, select, textarea {
+  border: 1px solid #2f313e;
+}
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-}
-
-header {
-  background-color: #181920;
-  border-bottom: 1px solid #2f313e;
 }
 
 header .container {
@@ -31,11 +56,6 @@ header .container {
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #ffffff;
-}
-
-.logo span {
-  color: #ecc078;
 }
 
 nav ul {
@@ -55,15 +75,39 @@ nav a:hover, nav a.active {
 }
 
 .hero {
-  background-color: #181920;
+  position: relative;
+  overflow: hidden;
   padding: 80px 20px;
   text-align: center;
-  border-bottom: 1px solid #2f313e;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(15, 16, 21, 0.7), rgba(15, 16, 21, 0.9));
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
 }
 
 .hero h1 {
   font-size: 40px;
-  color: #ffffff;
   margin-bottom: 15px;
 }
 
@@ -79,13 +123,13 @@ nav a:hover, nav a.active {
   color: #ecc078;
   border: 1px solid #ecc078;
   cursor: pointer;
-  transition: background-color 0.5s ease, transform 0.5s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
   background-color: #ecc078;
   color: #0f1015;
-  transform: translateY(-4);
+  transform: translateY(-2px);
 }
 
 .grid {
@@ -96,8 +140,6 @@ nav a:hover, nav a.active {
 }
 
 .card {
-  background-color: #181920;
-  border: 1px solid #2f313e;
   flex: 1 1 300px;
   display: flex;
   flex-direction: column;
@@ -109,10 +151,13 @@ nav a:hover, nav a.active {
   transform: translateY(-4px);
 }
 
-.card img {
+.card img, .detail-img {
   width: 100%;
-  height: 200px;
   object-fit: cover;
+}
+
+.card img {
+  height: 200px;
 }
 
 .card-content {
@@ -120,47 +165,55 @@ nav a:hover, nav a.active {
 }
 
 .tag {
-  color: #ecc078;
   font-size: 11px;
   text-transform: uppercase;
 }
 
 .card-content h3 {
-  color: #ffffff;
   margin: 10px 0;
 }
 
 .section {
   padding: 40px 0;
-  border-bottom: 1px solid #2f313e;
 }
 
-table {
+.table-container {
+  overflow-x: auto;
+  padding: 0;
+}
+
+.travel-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  min-width: 500px;
 }
 
-th, td {
-  padding: 12px 15px;
-  border-bottom: 1px solid #2f313e;
+.travel-table th, .travel-table td {
+  padding: 14px 20px;
   text-align: left;
 }
 
-th {
-  background-color: #181920;
-  color: #ffffff;
-  font-size: 12px;
+.travel-table th {
+  background-color: #1c1d24;
+  font-size: 11px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-tr:hover {
+.travel-table tr:last-child td {
+  border-bottom: none;
+}
+
+.travel-table tr:hover {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
+.travel-table td:last-child {
+  font-weight: bold;
+}
+
 .box {
-  background-color: #181920;
-  border: 1px solid #2f313e;
   padding: 20px;
   margin-top: 20px;
 }
@@ -168,7 +221,6 @@ tr:hover {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #ffffff;
   font-size: 12px;
 }
 
@@ -176,23 +228,18 @@ input, select, textarea {
   width: 100%;
   padding: 10px;
   background-color: #0f1015;
-  color: #ffffff;
-  border: 1px solid #2f313e;
   margin-bottom: 15px;
   font-family: inherit;
 }
 
 .detail-img {
-  width: 100%;
   height: 300px;
-  object-fit: cover;
   margin-bottom: 15px;
 }
 
 .detail-header {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #2f313e;
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -202,10 +249,8 @@ input, select, textarea {
 }
 
 dialog {
-  background-color: #181920;
   border: 1px solid #ecc078;
   padding: 30px;
-  color: #ffffff;
   text-align: center;
 }
 
