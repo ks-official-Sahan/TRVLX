@@ -17,22 +17,19 @@ body.contact-page {
   transition: background-image 1s ease-in-out;
 }
 
-/* Common Backgrounds */
 header, .box, dialog {
   background-color: #181920;
 }
 
-/* Common Text Colors */
-.logo, .hero h1, .card-content h3, label, dialog, input, select, textarea {
+.logo, .hero h1, label, dialog, input, select, textarea {
   color: #ffffff;
 }
 
-.logo span, .tag, .travel-table td:last-child {
+.logo span, .tag, td:last-child {
   color: #ecc078;
 }
 
-/* Common Borders */
-header, .hero, .section, .travel-table th, .travel-table td, .detail-header {
+header, .hero, .section, th, td, .details-header {
   border-bottom: 1px solid #2f313e;
 }
 
@@ -81,7 +78,7 @@ nav a:hover, nav a.active {
   text-align: center;
 }
 
-.hero-video {
+.hero video {
   position: absolute;
   top: 0;
   left: 0;
@@ -91,7 +88,7 @@ nav a:hover, nav a.active {
   z-index: 1;
 }
 
-.hero-overlay {
+.hero .overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -101,7 +98,7 @@ nav a:hover, nav a.active {
   z-index: 2;
 }
 
-.hero-content {
+.hero .content {
   position: relative;
   z-index: 3;
 }
@@ -151,7 +148,7 @@ nav a:hover, nav a.active {
   transform: translateY(-4px);
 }
 
-.card img, .detail-img {
+.card img, .box img {
   width: 100%;
   object-fit: cover;
 }
@@ -160,7 +157,7 @@ nav a:hover, nav a.active {
   height: 200px;
 }
 
-.card-content {
+.card-body {
   padding: 15px;
 }
 
@@ -169,7 +166,8 @@ nav a:hover, nav a.active {
   text-transform: uppercase;
 }
 
-.card-content h3 {
+.card-body h3 {
+  color: #ffffff;
   margin: 10px 0;
 }
 
@@ -182,18 +180,18 @@ nav a:hover, nav a.active {
   padding: 0;
 }
 
-.travel-table {
+table {
   width: 100%;
   border-collapse: collapse;
   min-width: 500px;
 }
 
-.travel-table th, .travel-table td {
+th, td {
   padding: 14px 20px;
   text-align: left;
 }
 
-.travel-table th {
+th {
   background-color: #1c1d24;
   font-size: 11px;
   text-transform: uppercase;
@@ -201,15 +199,15 @@ nav a:hover, nav a.active {
   font-weight: 600;
 }
 
-.travel-table tr:last-child td {
+tr:last-child td {
   border-bottom: none;
 }
 
-.travel-table tr:hover {
+tr:hover {
   background-color: rgba(255, 255, 255, 0.02);
 }
 
-.travel-table td:last-child {
+td:last-child {
   font-weight: bold;
 }
 
@@ -232,12 +230,12 @@ input, select, textarea {
   font-family: inherit;
 }
 
-.detail-img {
+.box img {
   height: 300px;
   margin-bottom: 15px;
 }
 
-.detail-header {
+.details-header {
   display: flex;
   justify-content: space-between;
   padding-bottom: 10px;
